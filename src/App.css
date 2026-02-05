@@ -1,0 +1,411 @@
+/* ===========================
+   VARIABLES DE COLOR
+   =========================== */
+:root {
+  --bg-primary: #0f172a;     /* fondo general */
+  --bg-secondary: #1e293b;   /* tarjetas y secciones */
+  --accent: #4f46e5;         /* azul intenso */
+  --accent-light: #818cf8;   /* azul suave */
+  --text-main: #f1f5f9;      /* texto claro */
+  --text-muted: #94a3b8;     /* texto secundario */
+  --border-color: #334155;   /* bordes suaves */
+}
+
+/* ===========================
+   CONTENEDOR ROOT
+   =========================== */
+#root {
+  max-width: 1280px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, sans-serif;
+  text-align: left;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* ===========================
+   LOGO ANIMADO
+   =========================== */
+.logo {
+  height: 5.5em;
+  padding: 1.5em;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 0 1.5em var(--accent-light));
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafb);
+}
+
+/* Animación de giro lenta */
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 25s linear;
+  }
+}
+
+/* Contenedor de enlaces */
+.nav-actions {
+  display: flex;
+  gap: 1rem; /* separación entre enlaces */
+  align-items: center;
+}
+
+/* Estilo base para todos los enlaces tipo botón */
+.nav-actions .link-text,
+.nav-actions .btn-primary,
+.nav-actions .btn-secondary {
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+/* Botón principal */
+.nav-actions .btn-primary {
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+}
+.nav-actions .btn-primary:hover {
+  background-color: #6366f1;
+  transform: translateY(-2px);
+}
+
+/* Botón secundario / estilo ghost */
+.nav-actions .btn-secondary,
+.nav-actions .link-text {
+  background: transparent;
+  color: #4f46e5;
+  border: 2px solid #4f46e5;
+}
+.nav-actions .btn-secondary:hover,
+.nav-actions .link-text:hover {
+  background-color: #6366f1;
+  color: #fff;
+  transform: translateY(-2px);
+}
+/* Contenedor de los botones del hero */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;             /* separación entre botones */
+  margin-top: 1.5rem;
+  flex-wrap: wrap;        /* se adapta a pantallas pequeñas */
+}
+
+/* Botón principal */
+.hero-buttons .btn-primary {
+  background-color: #4f46e5; /* azul fuerte */
+  color: #fff;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+.hero-buttons .btn-primary:hover {
+  background-color: #6366f1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+}
+
+/* Botón secundario / estilo ghost */
+.hero-buttons .btn-secondary {
+  background: transparent;
+  color: #4f46e5;
+  border: 2px solid #4f46e5;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.hero-buttons .btn-secondary:hover {
+  background-color: #6366f1;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   TARJETAS (card)
+   =========================== */
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* ===========================
+   BOTONES MODERNOS
+   =========================== */
+.btn {
+  margin: 5px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  margin-top: 5px;;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
+.btn-ghost:hover {
+  background: var(--accent-light);
+  color: #fff;
+}
+
+/* ===========================
+   TEXTOS Y TIPOGRAFÍA
+   =========================== */
+.read-the-docs {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ===========================
+   FORMULARIOS
+   =========================== */
+input, select, textarea {
+  background: #020617;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent-light);
+}
+/* ===========================
+   ESTILO GENERAL PARA TODOS LOS LINKS
+   =========================== */
+
+/* Base para todos los enlaces */
+a.link,
+a.btn,
+a.btn-primary,
+a.btn-secondary,
+a.btn-ghost {
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 999px; /* redondeado estilo botón */
+  padding: 0.6rem 1.4rem;
+}
+
+/* BOTÓN PRINCIPAL */
+a.btn-primary {
+  background-color: #4f46e5; /* azul intenso */
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+}
+
+a.btn-primary:hover {
+  background-color: #6366f1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79,70,229,0.4);
+}
+
+/* BOTÓN SECUNDARIO / GHOST */
+a.btn-secondary,
+a.btn-ghost {
+  background: transparent;
+  color: #4f46e5;
+  border: 2px solid #4f46e5;
+}
+
+a.btn-secondary:hover,
+a.btn-ghost:hover {
+  background-color: #6366f1;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* LINKS DE TEXTO PURO */
+a.link-text {
+ background-color: #4f46e5; /* azul intenso */
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+}
+
+a.link-text:hover {
+  background-color: #6366f1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79,70,229,0.4);
+}
+
+/* SEPARACIÓN ENTRE LINKS (contenedores flexibles) */
+.link-group {
+  display: flex;
+  gap: 1rem;       /* espacio entre links */
+  flex-wrap: wrap;  /* que no se rompa en móviles */
+}
+
+/* RESPONSIVE: botones más pequeños en móvil */
+@media (max-width: 480px) {
+  a.btn-primary,
+  a.btn-secondary,
+  a.btn-ghost {
+    width: 100%;
+    padding: 0.7rem;
+  }
+  .link-group {
+    flex-direction: column;
+  }
+}
+/* ==============================
+   CHECKBOX DE TÉRMINOS
+   ============================== */
+.check {
+  display: flex;
+  align-items: center;    /* centra verticalmente el checkbox y el texto */
+  gap: 0.5rem;            /* espacio entre checkbox y texto */
+  margin-bottom: 1.5rem;  /* separa del botón de enviar */
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #f1f5f9;
+}
+
+.check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4f46e5; /* color moderno del check */
+  flex-shrink: 0;
+}
+
+/* Hint de error del checkbox */
+.check + .field__hint {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #fca5a5; /* rojo claro */
+}
+
+/* RESPONSIVE: checkbox se mantiene centrado en móvil */
+@media (max-width: 480px) {
+  .check {
+    gap: 0.4rem;
+  }
+}
+
+/* ===========================
+   MEDIA QUERIES
+   =========================== */
+@media (max-width: 900px) {
+  #root {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+}
+/* ==============================
+   FORMULARIO LOGIN CORREGIDO
+   ============================== */
+
+/* Asegura que padding y borde no aumenten el ancho */
+.auth, .auth .input, .auth .inputRow .input {
+  box-sizing: border-box;
+}
+
+/* Tarjeta */
+.auth {
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 380px; /* ancho máximo más contenido cómodo */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  margin: 0 auto; /* centra la tarjeta */
+}
+
+/* Inputs ajustados */
+.auth .input {
+  width: 100%; /* ocupa todo el contenedor */
+  max-width: 100%; /* nunca excede la tarjeta */
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background-color: #020617;
+  color: #f1f5f9;
+  font-size: 1rem;
+}
+
+/* Input + botón “Ver/Ocultar” */
+.inputRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.inputRow .input {
+  flex: 1;
+  max-width: calc(100% - 80px); /* ajusta si el botón ocupa ~80px */
+}
+
+.inputRow .btn--sm {
+  flex-shrink: 0; /* no se achica */
+}
+
+/* Responsive: apilar en móvil */
+@media (max-width: 480px) {
+  .inputRow {
+    flex-direction: column;
+  }
+  .inputRow .input {
+    max-width: 100%;
+  }
+  .inputRow .btn--sm {
+    width: 100%;
+  }
+}
